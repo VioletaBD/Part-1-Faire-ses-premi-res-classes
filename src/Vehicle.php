@@ -1,20 +1,12 @@
 <?php
 
-
-// Vehicle.php
-
-
-class Vehicle
+abstract class Vehicle
 
 {
-    private string $color;
-
-    private int $currentSpeed;
-
-    private int $nbSeats;
-
-    private int $nbWheels = 4;
-
+    protected string $color;
+    protected int $currentSpeed;
+    protected int $nbSeats;
+    protected int $nbWheels = 4;
 
     public function __construct(string $color, int $nbSeats)
     {
@@ -80,7 +72,7 @@ class Vehicle
 
     public function setNbWheels(int $nbWheels): void
     {
-        $this->nbWheels = $nbWheels;
+        $this->nbWheels=$nbWheels;
     }
 
     public function setEnergy(string $energy): void
@@ -89,42 +81,41 @@ class Vehicle
 
     if (in_array($energy, self::ALLOWED_ENERGIES)) {
 
-        $this->energy = $energy;
+        $this->energy=$energy;
 
     }
     }
 
-public function getStorageCapacity(): int
-{
-    return $this->$storageCapacity = 50;
-}
-
-public function setStoregeCapacity(int $storageCapacity): void
-{
-    $this->storegeCapacity = $storageCapacity;
-}
-
-public function getLoaded(): int
-{
-    return $this->$loaded = Yes;
-}
-
-public function setLoaded(int $loaded): void
-{
-    $this->loaded = $loaded;
-}
-
-public function loaded (int $loaded): string
-
-{
-    $sentence = "Loading, please wait...";
-
-    while($this->loaded < 100)
-    if($this->loaded == $this->capacity) {
-        $sentence = 'The truck is loaded';
+    public function getStorageCapacity(): int
+    {
+     return $this->$storageCapacity = 50;
     }
-    return $sentence;
-}
 
+    public function setStoregeCapacity(int $storageCapacity): void
+    {
+     $this->storegeCapacity = $storageCapacity;
+    }
+
+    public function getLoaded(): int
+    {
+      return $this->$loaded = Yes;
+    }
+
+    public function setLoaded(int $loaded): void
+    {
+       $this->loaded = $loaded;
+    }
+
+    public function loaded (int $loaded): string
+
+    {
+      $sentence = "Loading, please wait...";
+
+        while($this->loaded < 100)
+        if($this->loaded == $this->capacity) {
+           $sentence = 'The truck is loaded';
+        }
+        return $sentence;
+    }
 }
 ?>
